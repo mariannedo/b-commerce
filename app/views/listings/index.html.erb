@@ -1,0 +1,34 @@
+<h1>B-Commerce</h1>
+
+<% unless user_signed_in? %>
+  <section class="sign-in" id="SignIn">
+    <%= form_for(:user, :url => session_path(:user)) do |f| %>
+
+    <div>
+      <%= f.label :email %>
+      <%= f.email_field :email, placeholder: 'hello@yourdomain.com' %>
+    </div>
+
+    <div>
+      <%= f.label :password %>
+      <%= f.password_field :password, autocomplete: "off", placeholder: 'your password' %>
+    </div>
+
+    <div class="button-outer">
+      <%= button_tag(type: 'submit', class: "") do %>
+        Sign In &nbsp;
+      <% end %>
+    </div>
+
+    <% end %>
+  </section>
+<% else %>
+  <section class="main">
+    <h3>
+      Welcome to B-Commerce, <%= current_user.first_name %>!
+    </h3>
+    <h4>You are signed in! <%= link_to('Logout', destroy_user_session_path, :method => :delete) %></h4>
+
+    <%= link_to('Create a listing', new_listing_path) %>
+  </section>
+<% end %>

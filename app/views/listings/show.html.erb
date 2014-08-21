@@ -1,0 +1,18 @@
+<h1>Listing</h1>
+<p><%= @listing.user.first_name %> posted:</p>
+
+<b>Title</b>
+<p><%= @listing.title %></p>
+
+<b>Story</b>
+<p><%= @listing.story %></p>
+
+<b>Image</b>
+<%= image_tag @listing.image_url.to_s %>
+
+<% if(current_user == @listing.user) %>
+  <%= link_to('Edit this listing', edit_listing_path) %>
+<% end %>
+
+Buy
+Haggle
