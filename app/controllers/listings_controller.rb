@@ -1,6 +1,6 @@
 class ListingsController < ApplicationController
   before_action :find_listing, only: [:show, :edit, :update, :send_buy_msg]
-  before_action :authenticate_user!, except: [:show]
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :set_user
 
   def index
