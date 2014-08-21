@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   get '/contacts', to: 'contacts#new'
   devise_for :users
   resources :listings
+  resources :listings do 
+    get :send_buy_msg
+  end
   resources :contacts, only: [:new, :create]
 
   # The priority is based upon order of creation: first created -> highest priority.

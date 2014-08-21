@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140821173600) do
+ActiveRecord::Schema.define(version: 20140821193400) do
 
   create_table "contacts", force: true do |t|
     t.datetime "created_at"
@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 20140821173600) do
     t.string   "email"
     t.text     "message"
     t.string   "nickname"
+    t.string   "subject"
+    t.string   "to_email"
   end
 
   create_table "listings", force: true do |t|

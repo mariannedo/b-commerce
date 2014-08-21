@@ -32,3 +32,19 @@
     <%= link_to('Create a listing', new_listing_path) %>
   </section>
 <% end %>
+
+
+<% if (@listings.size > 0) %>
+  <ul class="cameo-list just">
+    <% @listings.each do |l| %>
+      <li>
+        <h4><%= link_to(l.title, listing_path(l)) %></h4>
+        <p>$<%= l.price %></p>
+        <%= image_tag l.image_url.to_s %>
+        <%= link_to('View Listing', listing_path(l)) %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <h3>There are no Listings yet!</h3>
+<% end %>

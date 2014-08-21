@@ -1,4 +1,6 @@
 class Contact < MailForm::Base
+  attribute :subject
+  attribute :to_email
   attribute :name,      :validate => true
   attribute :email,     :validate => /\A([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})\z/i
   attribute :message
@@ -8,8 +10,8 @@ class Contact < MailForm::Base
   # in ActionMailer accepts.
   def headers
     {
-      :subject => "Someone has contacted you through B-Commerce",
-      :to => "marianne.do@barrelny.com",
+      :subject => "#{subject}",
+      :to => "#{to_email}",
       :from => %("#{name}" <#{email}>)
     }
   end

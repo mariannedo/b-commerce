@@ -14,5 +14,8 @@
   <%= link_to('Edit this listing', edit_listing_path) %>
 <% end %>
 
-Buy
+<%# Contact the person %>
+
+<%= link_to('Buy this thing', listing_send_buy_msg_path(@listing)) %>
+
 Haggle
