@@ -12,10 +12,10 @@
 
 <% if(current_user == @listing.user) %>
   <%= link_to('Edit this listing', edit_listing_path) %>
+<% else %>
+  <%# Contact the person %>
+
+  <%= link_to('Buy this thing', listing_send_buy_msg_path(@listing)) %>
+  <%= link_to("Haggle #{@listing.user.first_name}", listing_haggle_path(@listing)) %>
+  <%= link_to("Ask #{@listing.user.first_name} a question", listing_contact_path(@listing)) %>
 <% end %>
-
-<%# Contact the person %>
-
-<%= link_to('Buy this thing', listing_send_buy_msg_path(@listing)) %>
-
-Haggle

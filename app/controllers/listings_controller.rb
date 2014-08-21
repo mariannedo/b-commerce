@@ -1,5 +1,5 @@
 class ListingsController < ApplicationController
-  before_action :find_listing, only: [:show, :edit, :update, :send_buy_msg]
+  before_action :find_listing, only: [:show, :edit, :update, :send_buy_msg, :destroy, :haggle, :contact, :send_haggle_msg, :send_contact_msg]
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_user
 
@@ -12,7 +12,7 @@ class ListingsController < ApplicationController
   end
 
   def create
-    @listing = @user.listings.build(safe_listing)
+    @listing = @active_user.listings.build(safe_listing)
     if @listing.save
       flash[:notice] = "Listing saved successfully"
       redirect_to @listing
@@ -32,28 +32,82 @@ class ListingsController < ApplicationController
   end
 
   def edit
+    if (@listing.user != @active_user)
+      redirect_to @listing, :notice => 'You do not have permission to edit this listing.'
+    end
   end
 
   def show
   end
 
+  def destroy
+    @listing.destroy
+    redirect_to root_path, :notice => 'Your listing has been deleted.'
+  end
+
   # email methods
+
+  def haggle
+    listing_user = @listing.user
+    @contact = Contact.new
+  end
+
+  def contact
+    listing_user = @listing.user
+    @contact = Contact.new
+  end
 
   def send_buy_msg
     listing_user = @listing.user
 
     contact = Contact.new
-    contact.name = "#{@user.first_name} #{@user.last_name}"
-    contact.email = @user.email
-    contact.message = "I would like to purchase the #{@listing.title}!"
-    contact.subject = "Someone would like to purchase your B-Commerce item!"
+    contact.name = "#{@active_user.first_name} #{@active_user.last_name}"
+    contact.email = @active_user.email
+    contact.message = "Gimme."
+    contact.subject = "#{@active_user.first_name} wants your #{@listing.title}!"
     contact.to_email = listing_user.email
     contact.request = request
     if contact.deliver
       flash[:notice] = 'The seller has been notified and will get in touch with you soon!'
       redirect_to @listing
     else
-      flash[:error] = 'Cannot send message.'
+      flash[:error] = 'There was an error sending your message. Please try again!'
+      render :new
+    end
+  end
+
+  def send_haggle_msg
+    listing_user = @listing.user
+    @contact = Contact.new(params[:contact])
+    @contact.name = "#{@active_user.first_name} #{@active_user.last_name}"
+    @contact.email = @active_user.email
+    @contact.subject = "#{@active_user.first_name} is interested in your #{@listing.title}!"
+    @contact.to_email = listing_user.email
+    @contact.request = request
+
+    if @contact.deliver
+      flash[:notice] = 'The seller has received your message. Happy haggling!'
+      redirect_to @listing
+    else
+      flash[:error] = 'There was an error sending your message. Please try again!'
+      render :new
+    end
+  end
+
+  def send_contact_msg
+    listing_user = @listing.user
+    @contact = Contact.new(params[:contact])
+    @contact.name = "#{@active_user.first_name} #{@active_user.last_name}"
+    @contact.email = @active_user.email
+    @contact.subject = "#{@active_user.first_name} has a question about your #{@listing.title}!"
+    @contact.to_email = listing_user.email
+    @contact.request = request
+
+    if @contact.deliver
+      flash[:notice] = 'The seller has received your message!'
+      redirect_to @listing
+    else
+      flash[:error] = 'There was an error sending your message. Please try again!'
       render :new
     end
   end

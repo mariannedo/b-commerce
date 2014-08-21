@@ -6,6 +6,10 @@ Rails.application.routes.draw do
   resources :listings
   resources :listings do 
     get :send_buy_msg
+    get :contact
+    get :haggle
+    post :send_contact_msg
+    post :send_haggle_msg
   end
   resources :contacts, only: [:new, :create]
 

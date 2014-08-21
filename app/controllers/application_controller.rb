@@ -5,6 +5,6 @@ class ApplicationController < ActionController::Base
 
   # Set user
   def set_user
-    @user = current_user ? current_user : User.new
+    @active_user = current_user ? current_user : User.new
   end
 end

@@ -1,0 +1,8 @@
+<%= form_for @contact, :url => { :action => "send_contact_msg" }, :html => { :method => "post", :multipart => true } do |f| %>
+  <%= f.hidden_field :status, value: 'Open' %>
+
+  <label>Message</label>
+  <%= f.text_area :message, placeholder: 'message' %>
+
+  <%= submit_tag 'Submit' %>
+<% end %>
