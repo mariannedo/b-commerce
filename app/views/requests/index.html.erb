@@ -1,0 +1,13 @@
+<% if (@requests.size > 0) %>
+  <ul>
+    <% @requests.each do |r| %>
+      <li>
+        <%= r.item %>
+        <b>The Story</b>
+        <%= r.description %>
+
+        <%= link_to("I have this!", request_contact_path(r)) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>

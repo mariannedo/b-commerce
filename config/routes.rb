@@ -11,6 +11,11 @@ Rails.application.routes.draw do
     post :send_contact_msg
     post :send_haggle_msg
   end
+  resources :requests
+  resources :requests do 
+    get :contact
+    post :send_contact_msg
+  end
   resources :contacts, only: [:new, :create]
 
   # The priority is based upon order of creation: first created -> highest priority.
