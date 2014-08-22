@@ -48,7 +48,7 @@
       <% if(current_user == @listing.user) %>
         <%= link_to('Edit this listing ››', edit_listing_path) %>
       <% else %>
-        <%= link_to("Hit up the seller ››", listing_contact_path(@listing), class: 'h3') %>
+        <%= link_to("Hit up the seller ››", listing_contact_path(@listing), class: 'h3 link') %>
       <% end %>
     </div>
   </section>
