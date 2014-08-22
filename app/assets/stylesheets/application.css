@@ -23,7 +23,8 @@ html {
 
 body {
   line-height: 1;
-  background-color: #f7f7f7; }
+  background-color: #f7f7f7; 
+  color: #ff3f3d;}
 
 ol, ul {
   list-style: none; }
@@ -939,6 +940,7 @@ form .request table {
   width: 100%; 
 }
 form .request td { 
+  font-weight: 700;
   white-space: nowrap;
 }
 form .request input { 
