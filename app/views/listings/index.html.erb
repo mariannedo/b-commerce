@@ -1,10 +1,10 @@
 <div id="BuyList">
-  <h1 class="h5">Things People Need</h1>
+  <h1 class="h5">things for sale.</h1>
   <% if (@listings.size > 0) %>
-    <ul id="ProductListing">
+    <ul id="ProductGrid">
       <% @listings.each do |l| %>
-        <a href="<%= listing_path(l) %>">
-          <li class="saleproduct">
+        <li class="saleproduct">
+          <a href="<%= listing_path(l) %>">
             <div class="imgouter" style="background-image: url(<%= l.image_url %>);">
               <span class="spacer"></span>
             </div>
@@ -12,8 +12,8 @@
               <h1 class="h3"><%= l.title %></h1>
               <h2 class="h4">$<%= number_with_precision(l.price, :precision => 2) %></h2>
             </div>
-          </li>
-        </a>
+          </a>
+        </li>
       <% end %>
     </ul>
   <% else %>
