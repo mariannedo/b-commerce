@@ -29,6 +29,7 @@
 
   <section id="MoreProducts">
     <h1 class="h2">More things.</h1>
+    <a href="<%= listings_path %>" class="all">See all the things</a>
     <ul class="three">
       <% @more.each do |l| %>
         <a href="<%= listing_path(l) %>">

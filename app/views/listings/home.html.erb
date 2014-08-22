@@ -1,18 +1,17 @@
-<div id="HomeContainer">
-  <div class="hometitle">
-    <h1>Thrift is a place where you can <%= link_to('buy', listings_path) %>, <%= link_to('sell', new_listing_path) %>, <%= link_to('borrow', new_request_path) %> and <%= link_to('lend', requests_path) %> all the things.</h1>
-  </div>
-
-  <a href="<%= listings_path %>">
-    <div class="half left" style="background-image: url('/images/barrelmoments01.jpg');">
-      <span class="spacer"></span>
-      <h1 class="h5">Buy<br>things</h1>
+<div id="HomeContainer" class="contentwrapper">
+  <section class="table-cell">
+    <div class="icons">
+        <!-- <span class="spacer"></span> -->
+        <img src="/images/icon1.svg">
+        <img src="/images/icon2.svg">
+        <img src="/images/icon3.svg">
+        <img src="/images/icon4.svg">
+        <img src="/images/icon5.svg">
+        <img src="/images/icon6.svg">
     </div>
-  </a>
-  <a href="<%= new_request_path %>">
-  <div class="half right" style="background-image: url('/images/barrelmoments02.jpg');">
-    <span class="spacer"></span>
-    <h1 class="h5">Borrow<br>things</h1>
-  </div>
-  </a>
+    <div class="hometitle">
+        <h1 class="h5">Thrift is a place to <%= link_to('buy', listings_path) %>, <%= link_to('sell', new_listing_path) %>, <%= link_to('borrow', new_request_path) %> and <%= link_to('lend', requests_path) %> all the things.</h1>
+        <h2 class="h3">Yes, all things. Even Alpaca.</h2>
+    </div>
+  </section>
 </div>
