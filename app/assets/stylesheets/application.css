@@ -204,7 +204,6 @@ p, .p {
     text-align: center;
     width: 48%;
     background-color: yellow;
-    background-image: url('../images/barrelmoments01.jpg');
     background-size: cover;
     background-position: center;
     position: relative;
@@ -301,7 +300,6 @@ p, .p {
     #Slideshow .thumbs li:nth-child(2) {
       margin: 0 10px; }
     #Slideshow .thumbs li {
-      background-image: url('../images/redsolo01.jpg');
       background-size: cover;
       background-position: center;
       display: inline-block;
@@ -432,7 +430,6 @@ p, .p {
       #MoreProducts .three .product.gap {
         display: none; } }
     #MoreProducts .three .product .imgouter {
-      background-image: url('../images/redsolo01.jpg');
       background-size: cover;
       background-position: center;
       position: relative; }
