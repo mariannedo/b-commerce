@@ -767,7 +767,6 @@ body {
       .accordion dt .info.dim {
         opacity: 0.4; }
       .accordion dt .info h1, .accordion dt .info h2 {
-        text-transform: capitalize;
         max-width: 80%; }
       @media screen and (max-width: 640px) {
         .accordion dt .info h2, .accordion dt .info h3 {
