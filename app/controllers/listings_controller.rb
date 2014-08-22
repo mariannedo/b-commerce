@@ -52,12 +52,12 @@ class ListingsController < ApplicationController
   # email methods
 
   def haggle
-    listing_user = @listing.user
+    @listing_user = @listing.user
     @contact = Contact.new
   end
 
   def contact
-    listing_user = @listing.user
+    @listing_user = @listing.user
     @contact = Contact.new
   end
 

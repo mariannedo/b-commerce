@@ -47,7 +47,7 @@ class RequestsController < ApplicationController
   end
 
   def contact
-    request_user = @request.user
+    @request_user = @request.user
     @contact = Contact.new
   end
 

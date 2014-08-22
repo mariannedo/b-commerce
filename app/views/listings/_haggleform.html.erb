@@ -1,7 +1,8 @@
 <%= form_for @contact, :url => { :action => "send_haggle_msg" }, :html => { :method => "post", :multipart => true } do |f| %>
+  <div> 
+    <label>Tell it!</label>
+    <%= f.text_area :message, placeholder: "I'll buy it for half that price... or would you be up for a trade?" %>
+  </div>
 
-  <label>Message</label>
-  <%= f.text_area :message, placeholder: 'message' %>
-
-  <%= submit_tag 'Submit' %>
+  <%= submit_tag 'Haggle Away' %>
 <% end %>

@@ -1,7 +1,9 @@
 <%= form_for @contact, :url => { :action => "send_contact_msg" }, :html => { :method => "post", :multipart => true } do |f| %>
 
-  <label>Message</label>
-  <%= f.text_area :message, placeholder: 'message' %>
+  <div>
+    <label>What else? </label>
+    <%= f.text_area :message, placeholder: "I need it back by Sunday" %>
+  </div>
 
   <%= submit_tag 'Submit' %>
 <% end %>
