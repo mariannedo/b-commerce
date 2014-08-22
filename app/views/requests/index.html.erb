@@ -17,6 +17,8 @@
             <h1 class="h3">The Story</h1>
             <p><%= r.description %></p>
             <a href=""><span class="btn2 h4">I can lend this</span></a>
+
+            <%= link_to(raw("<span class='btn2 h4'>I can lend this</span>"), request_contact_path(r)) %>
           </dd>
         <% end %>
       </dl>
