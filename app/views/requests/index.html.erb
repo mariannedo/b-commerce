@@ -6,11 +6,11 @@
         <% @requests.each do |r| %>
           <dt>
             <a href="">
-            <span class="info">
-            <h1 class="h2"><%= r.user.first_name %> <%= r.user.last_name %></h1>
-            <h2 class="h1">Can I borrow <%= r.item %>?</h2>
-            <h3>▿</h3>
-            </span>
+              <span class="info">
+                <h1 class="h2"><%= r.user.first_name %> <%= r.user.last_name %></h1>
+                <h2 class="h1">Can I borrow <%= r.item %>?</h2>
+              </span>
+              <span class="arrow">▿</span>
             </a>
           </dt>
           <dd>

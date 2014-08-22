@@ -675,84 +675,66 @@ button:hover .line {
 
 .accordion {
   border-bottom: 2px #ff3f3d solid;
-  margin: 65px 0; }
+  margin: 40px 0; }
   .accordion dt {
     border-top: 2px #ff3f3d solid;
-    background-size: cover;
-    background-position: center;
-    overflow: auto;
     position: relative; }
     .accordion dt a {
       display: block;
-      padding: 50px 0;
-      min-height: 70px;
+      padding: 50px 40px;
       -webkit-transition: background-color 0.15s ease;
               transition: background-color 0.15s ease;
       -webkit-transition: 0.5s ease;
               transition: 0.5s ease; }
-      @media screen and (max-width: 640px) {
-        .accordion dt a {
-          padding-bottom: 35px; } }
-      @media screen and (max-width: 450px) {
-        .accordion dt a {
-          padding-bottom: 30px; } }
       .accordion dt a.red {
         background-color: #ff3f3d; }
         .accordion dt a.red:hover {
-          padding: 50px 0; }
+          padding: 50px 40px; }
         .accordion dt a.red .h1, .accordion dt a.red .h2 {
           color: #fff; }
       .accordion dt a:hover {
         background-color: #ff3f3d;
-        padding: 60px 0; }
-        .accordion dt a:hover .h1, .accordion dt a:hover .h2, .accordion dt a:hover h3 {
+        padding: 60px 40px; }
+        .accordion dt a:hover .h1, .accordion dt a:hover .h2, .accordion dt a:hover .arrow {
           color: #fff; }
-    .accordion dt .info {
-      z-index: 2;
-      position: absolute;
-      left: 40px;
-      right: 40px;
-      -webkit-transition: opacity 1s ease;
-              transition: opacity 1s ease; }
-      @media screen and (max-width: 768px) {
-        .accordion dt .info {
-          left: 20px;
-          right: 20px; } }
-      @media screen and (max-width: 640px) {
-        .accordion dt .info {
-          text-align: center;
-          left: 0;
-          right: 0; } }
-      .accordion dt .info.dim {
-        opacity: 0.4; }
-      .accordion dt .info h1, .accordion dt .info h2 {
-        text-transform: capitalize; }
-      .accordion dt .info h2 {
-        float: left; }
-      .accordion dt .info h3 {
-        float: right;
-        position: relative;
-        margin-top: 5px;
+      .accordion dt a .arrow {
+        position: absolute;
+        top: 50px;
+        right: 50px;
         font-size: 40px;
+        text-align: center;
+        height: 40px;
+        width: 40px;
+        display: inline-block;
         -webkit-transform: rotate(0);
             -ms-transform: rotate(0);
                 transform: rotate(0);
         -webkit-transition: -webkit-transform 0.5s ease;
-                transition: transform 0.5s ease;
-        text-align: center;
-        height: 40px;
-        width: 40px; }
+                transition: transform 0.5s ease; }
         @media screen and (max-width: 980px) {
-          .accordion dt .info h3 {
+          .accordion dt a .arrow {
             margin-top: 15px; } }
         @media screen and (max-width: 640px) {
-          .accordion dt .info h3 {
+          .accordion dt a .arrow {
             padding: 0; } }
-        .accordion dt .info h3.flip {
+        .accordion dt a .arrow.flip {
           -webkit-transform: rotate(180deg);
               -ms-transform: rotate(180deg);
                   transform: rotate(180deg);
           color: #fff; }
+    .accordion dt .info {
+      z-index: 2;
+      position: relative;
+      -webkit-transition: opacity 1s ease;
+              transition: opacity 1s ease; }
+      @media screen and (max-width: 640px) {
+        .accordion dt .info {
+          text-align: center; } }
+      .accordion dt .info.dim {
+        opacity: 0.4; }
+      .accordion dt .info h1, .accordion dt .info h2 {
+        text-transform: capitalize;
+        max-width: 80%; }
       @media screen and (max-width: 640px) {
         .accordion dt .info h2, .accordion dt .info h3 {
           float: none; } }

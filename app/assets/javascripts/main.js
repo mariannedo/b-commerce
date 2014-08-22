@@ -1,12 +1,12 @@
 var appReady = function() { 
 
-var $allPanels = $('.accordion > dd').hide();
+ var $allPanels = $('.accordion > dd').hide();
     
   $('.accordion > dt > a').click(function(e) {
     if($(this).closest('dt').next('dd').css('display') == 'block') {
       // Clicked is open
       $allPanels.slideUp();
-      $(e.currentTarget).find('h3').removeClass('flip');
+      $(e.currentTarget).find('.arrow').removeClass('flip');
       $('.accordion > dt .info').removeClass('dim');
       $(e.currentTarget).removeClass('red');
     } else {
@@ -20,8 +20,8 @@ var $allPanels = $('.accordion > dd').hide();
       $('.accordion').find('.red').removeClass('red'); 
       $(e.currentTarget).addClass('red');
       $(this).closest('dt').next('dd').addClass('red');
-      $(e.currentTarget).find('h3').addClass('flip');
-      $(this).closest('dt').siblings().find('h3').removeClass('flip');
+      $(e.currentTarget).find('.arrow').addClass('flip');
+      $(this).closest('dt').siblings().find('.arrow').removeClass('flip');
       $(e.currentTarget).find('.info').removeClass('dim');
       $(this).closest('dt').siblings().find('.info').addClass('dim');
     }
