@@ -872,7 +872,7 @@ form textarea {
 }
 form label { 
   display: block; 
-  margin-bottom: 10px; 
+  margin-bottom: 20px; 
 }
 form input[type="submit"] { 
   margin-top: 30px;
@@ -896,4 +896,10 @@ form .request input {
 }
 form input.short { 
   width: 98%;
+}
+
+@media screen and (max-width: 1024px) { 
+  form { 
+    max-width: 100%; 
+  }
 }

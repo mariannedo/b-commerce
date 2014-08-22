@@ -1,2 +1,11 @@
-<h1>Contact <%= @listing_user.first_name %></h1>
-<%= render 'contactform' %>
+<section id="ProductListing"> 
+  <%= render 'images' %>
+
+  <div id="ProductInfo">
+    <div class="title">
+      <h1>Contact <%= @listing_user.first_name %></h1>
+    </div>
+    
+    <%= render 'contactform' %>
+  </div>
+</section>
