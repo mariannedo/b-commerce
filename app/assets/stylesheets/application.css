@@ -856,10 +856,15 @@ form > div {
 }
 form input[type="text"], 
 form input[type="email"], 
+form input[type="password"], 
 form textarea { 
   font-family: 'Inconsolata', courier new, sans-serif;
   font-weight: bold; 
   width: 100%; 
+}
+form input[type="checkbox"] { 
+  float: left; 
+  margin: 0 10px; 
 }
 form textarea { 
   height: 200px; 
