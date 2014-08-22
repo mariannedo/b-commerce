@@ -1,50 +1,22 @@
-<% unless user_signed_in? %>
-  <section class="sign-in" id="SignIn">
-    <%= form_for(:user, :url => session_path(:user)) do |f| %>
-
-    <div>
-      <%= f.label :email %>
-      <%= f.email_field :email, placeholder: 'hello@yourdomain.com' %>
-    </div>
-
-    <div>
-      <%= f.label :password %>
-      <%= f.password_field :password, autocomplete: "off", placeholder: 'your password' %>
-    </div>
-
-    <div class="button-outer">
-      <%= button_tag(type: 'submit', class: "") do %>
-        Sign In &nbsp;
+<div id="BuyList">
+  <h1 class="h5">Things People Need</h1>
+  <% if (@listings.size > 0) %>
+    <ul id="ProductListing">
+      <% @listings.each do |l| %>
+        <a href="<%= listing_path(l) %>">
+          <li class="saleproduct">
+            <div class="imgouter" style="background-image: url(<%= l.image_url %>);">
+              <span class="spacer"></span>
+            </div>
+            <div class="listinginfo">
+              <h1 class="h3"><%= l.title %></h1>
+              <h2 class="h4">$<%= number_with_precision(l.price, :precision => 2) %></h2>
+            </div>
+          </li>
+        </a>
       <% end %>
-    </div>
-
-    <% end %>
-  </section>
-<% else %>
-  <section class="main">
-    <h3>
-      Welcome to THRIFT, <%= current_user.first_name %>!
-    </h3>
-    <h4>You are signed in! <%= link_to('Logout', destroy_user_session_path, :method => :delete) %></h4>
-
-    <%= link_to('Create a listing', new_listing_path) %>
-
-    <%= link_to('Ask to borrow something', new_request_path) %>
-  </section>
-<% end %>
-
-
-<% if (@listings.size > 0) %>
-  <ul>
-    <% @listings.each do |l| %>
-      <li>
-        <h4><%= link_to(l.title, listing_path(l)) %></h4>
-        <p>$<%= number_with_precision(l.price, :precision => 2) %></p>
-        <%= image_tag l.image_url.to_s %>
-        <%= link_to('View Listing', listing_path(l)) %>
-      </li>
-    <% end %>
-  </ul>
-<% else %>
-  <h3>There are no Listings yet!</h3>
-<% end %>
+    </ul>
+  <% else %>
+    <h3>There are no Listings yet!</h3>
+  <% end %>
+</div>

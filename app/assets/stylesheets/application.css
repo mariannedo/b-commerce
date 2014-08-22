@@ -182,7 +182,6 @@ p, .p {
     text-align: center;
     width: 48%;
     background-color: yellow;
-    background-image: url('../images/barrelmoments01.jpg');
     background-size: cover;
     background-position: center;
     position: relative;
@@ -227,6 +226,7 @@ p, .p {
 #ProductListing {
   display: inline-block;
   margin: 50px 0 0 230px;
+  width: 100%;
   max-width: 1300px; }
 
 #Slideshow {
@@ -269,7 +269,6 @@ p, .p {
     #Slideshow .thumbs li:nth-child(2) {
       margin: 0 10px; }
     #Slideshow .thumbs li {
-      background-image: url('../images/redsolo01.jpg');
       background-size: cover;
       background-position: center;
       display: inline-block;
@@ -322,7 +321,6 @@ p, .p {
       display: inline-block;
       position: relative; }
       #MoreProducts .three .product .imgouter {
-        background-image: url('../images/redsolo01.jpg');
         background-size: cover;
         background-position: center;
         position: relative; }
@@ -373,7 +371,6 @@ p, .p {
   display: inline-block;
   position: relative; }
   .saleproduct .imgouter {
-    background-image: url('../images/redsolo01.jpg');
     background-size: cover;
     background-position: center;
     position: relative; }

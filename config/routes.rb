@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root 'listings#index'
+  root 'listings#home'
   get '/contacts', to: 'contacts#new'
   devise_for :users
   resources :listings
