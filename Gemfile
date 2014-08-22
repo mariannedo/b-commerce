@@ -40,7 +40,10 @@ gem 'devise'
 # File uploads
 
 # gem 'rmagick'
-gem 'carrierwave', '~> 0.10.0'
+gem 'carrierwave'
+gem 'fog'
+# gem 'carrierwave_direct'
+# gem 'sidekiq'
 
 # Formz 
 gem 'mail_form'
