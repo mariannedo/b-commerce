@@ -39,7 +39,7 @@ gem 'devise'
 
 # File uploads
 
-gem 'rmagick'
+# gem 'rmagick'
 gem 'carrierwave', '~> 0.10.0'
 
 # Formz 
