@@ -2,33 +2,33 @@
   <%= f.hidden_field :status, value: 'Open' %>
 
   <div>
-    <label>Title</label>
-    <%= f.text_field :title, placeholder: 'listing title' %>
+    <label>Listing Title</label>
+    <%= f.text_field :title, placeholder: "my great grandma's favorite chair" %>
   </div>
 
   <div>
     <label>Story</label>
-    <%= f.text_area :story, placeholder: 'product story' %>
+    <%= f.text_area :story, placeholder: "she climbed on top of it to save five kittens from a burning tree" %>
   </div>
 
   <div>
     <label>Desired Price</label>
-    $<%= f.text_field :price, placeholder: '1,000,000' %>
+    <nobr>
+      $<%= f.text_field :price, placeholder: '1,000,000', class: 'short' %>
+    </nobr>
   </div>
 
   <div>
+    <label>Image 1</label>
     <%= f.file_field :image %>
   </div>
-    <div>
+  <div>
+    <label>Image 2</label>
     <%= f.file_field :image2 %>
   </div>
-    <div>
+  <div>
+    <label>Image 3</label>
     <%= f.file_field :image3 %>
-  </div>
-
-  <div class="existing-image">
-    <b>Existing Image</b>
-    <%= image_tag(@listing.image) %>
   </div>
 
   <%= submit_tag 'Submit' %>
