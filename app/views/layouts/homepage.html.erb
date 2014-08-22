@@ -17,30 +17,26 @@
     <p class="alert"><%= alert %></p>
   <% end %>
   <div id="Wrapper">
-    <nav id="MainNav">
-      <a href="<%= root_path %>"><span class="logo h2">Thrift</span></a>
-      <ul id="Nav">
-        <li class="h3"><%= link_to('Buy', listings_path) %></li>
-        <li class="h3"><%= link_to('Sell', new_listing_path) %></li>
-        <li class="h3"><%= link_to('Borrow', new_request_path) %></li>
-        <li class="h3"><%= link_to('Lend', requests_path) %></li>
 
-        <% unless user_signed_in? %>
-          <li class="h3 login"><%= link_to 'Login', new_user_session_path %></li>
-        <% else %>
-          <li class="h3 login"><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
-        <% end %>
-      </ul>
-    </nav>
+    <div id="MainNav">
+      <div class="icons">
+        <img src="/images/icon1.svg">
+        <img src="/images/icon2.svg">
+        <img src="/images/icon3.svg">
+        <img src="/images/icon4.svg">
+        <img src="/images/icon5.svg">
+        <img src="/images/icon6.svg">
+      </div>
+    </div>
 
     <nav id="MobileNav">
-      <a href="<%= root_path %>"><span class="logo2 h2">Thrift</span></a>
       <a href="javascript:void(0)" class="menubtn">
         <span class="line line-t"></span>
         <span class="line line-m"></span>
         <span class="line line-b"></span>
       </a>
       <ul id="Nav2">
+        <li class="h1"><%= link_to('Home', root_path) %></li>
         <li class="h1"><%= link_to('Buy', listings_path) %></li>
         <li class="h1"><%= link_to('Sell', new_listing_path) %></li>
         <li class="h1"><%= link_to('Borrow', new_request_path) %></li>

@@ -4,6 +4,7 @@ class ListingsController < ApplicationController
   before_action :set_user
 
   def home
+    render :layout => 'homepage'
   end
 
   def index
