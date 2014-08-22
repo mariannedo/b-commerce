@@ -122,7 +122,7 @@ class ListingsController < ApplicationController
     end
 
     def safe_listing
-      params.require(:listing).permit(:title, :story, :price, :image)
+      params.require(:listing).permit(:title, :story, :price, :image, :image2, :image3)
     end
 
     # email safe params

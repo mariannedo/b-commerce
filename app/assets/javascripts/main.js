@@ -200,7 +200,7 @@ var appReady = function() {
 
     $(function(){
 
-      //$('.simpleSlider').simpleSlider();
+      $('.simpleSlider').simpleSlider();
 
     });
 
