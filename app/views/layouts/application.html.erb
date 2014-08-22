@@ -9,6 +9,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <% if notice %>
+    <p class="notice"><%= notice %></p>
+  <% end %>
+  <% if alert %>
+    <p class="alert"><%= alert %></p>
+  <% end %>
   <div id="Wrapper">
     <nav id="MainNav">
       <a href="<%= root_path %>"><span class="logo"></span></a>
@@ -43,13 +49,6 @@
         <% end %>
       </ul>
     </nav>
-
-    <% if notice %>
-      <p class="notice"><%= notice %></p>
-    <% end %>
-    <% if alert %>
-      <p class="alert"><%= alert %></p>
-    <% end %>
 
     <%= yield %>
 

@@ -71,3 +71,58 @@ user_lucas = User.create(
 )
 #user_lucas.skip_confirmation!
 user_lucas.save
+
+user_wook = User.create(
+  email: "sei-wook.kim@barrelny.com",
+  first_name: "Sei-Wook",
+  last_name: "Kim",
+  username: "seiwookkim",
+  password: "barrel11",
+  password_confirmation: "barrel11"
+)
+#user_wook.skip_confirmation!
+user_wook.save
+
+user_pete = User.create(
+  email: "peter.kang@barrelny.com",
+  first_name: "Peter",
+  last_name: "Kang",
+  username: "peterkang",
+  password: "barrel11",
+  password_confirmation: "barrel11"
+)
+#user_pete.skip_confirmation!
+user_pete.save
+
+user_betty = User.create(
+  email: "betty.chan@barrelny.com",
+  first_name: "Betty",
+  last_name: "Chan",
+  username: "bettychan",
+  password: "barrel11",
+  password_confirmation: "barrel11"
+)
+#user_betty.skip_confirmation!
+user_betty.save
+
+user_boram = User.create(
+  email: "boram.kim@barrelny.com",
+  first_name: "Boram",
+  last_name: "Kim",
+  username: "boramkim",
+  password: "barrel11",
+  password_confirmation: "barrel11"
+)
+#user_boram.skip_confirmation!
+user_boram.save
+
+user_angel = User.create(
+  email: "angel.ng@barrelny.com",
+  first_name: "Angel",
+  last_name: "Ng",
+  username: "angelng",
+  password: "barrel11",
+  password_confirmation: "barrel11"
+)
+#user_angel.skip_confirmation!
+user_angel.save

@@ -744,3 +744,21 @@ textarea:focus, input:focus {
     #Footer .right img {
       width: 120px; }
 /*# sourceMappingURL=main.css.map */
+
+
+
+body { 
+  font-family: 'Inconsolata', sans-serif;
+}
+p.notice, 
+p.alert { 
+  background: #ff3f3d;
+  color: #fff; 
+  padding: 10px 60px; 
+  width: 100%; 
+}
+.sign-in input[type="text"], 
+.sign-in input[type="email"], 
+.sign-in input[type="password"] { 
+  padding: 5px; 
+}
