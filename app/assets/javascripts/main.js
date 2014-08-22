@@ -202,6 +202,11 @@ var appReady = function() {
       if($('.simpleSlider li').length > 1) { 
         $('.simpleSlider').simpleSlider();
       }
+      if($('p.notice').length || $('p.alert').length) { 
+        $('p.notice, p.alert').animate({ opacity: 1 }, 3000, function() { 
+          $(this).fadeOut('fast'); 
+        }); 
+      }
 
     });
 

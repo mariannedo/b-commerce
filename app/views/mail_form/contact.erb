@@ -1,9 +1,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
  <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <title>SUBJECT!</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Thrift.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style type="text/css">
   body, #bodyTitle, #bodyMessage, #bodyFooter, {
     height:100%;
@@ -103,16 +103,20 @@
 
 </head>
 
-<body>
-<table class="center">
+<body style="height: 100%;margin: 0;padding: 0;border: 0;width: 100%;background-color: #f7f7f7;">
+<center>
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse;border: 0;padding: 0;background-color: #ffffff;margin:0; text-align:center;">
+<tr align="top">
+<td align="center">
+<table align="center" class="center" style="border-collapse: collapse;border: 0;padding: 0;background-color: #ffffff;margin-left: auto;margin-right: auto;">
   <tr>
-    <td class="headerImage">
+    <td class="headerImage" style="background-color: #ff3f3d;padding: 10px;">
       <img src="http://nameless-garden-4346.herokuapp.com/images/email-header.jpg">
     </td>
   </tr>
   <tr>
-    <td id="bodyCell" class="MessageTitle"> 
-      <h1>
+    <td id="bodyCell" class="MessageTitle" style="padding: 20px;border-top: 0;padding-top: 30px !important;"> 
+      <h1 style="margin: 0;padding: 0;color: #ff3f3d;font-family: &quot;Inconsolata&quot;, &quot;Courier New&quot;, sans-serif;font-size: 30px;text-align: left;">
         <% @resource.mail_form_attributes.each do |attribute, value|
         next if value.blank? %>
           <% if (@resource.class.human_attribute_name(attribute) == 'Subject') %>
@@ -131,8 +135,8 @@
     </td>
   </tr>
   <tr>
-    <td id="bodyCell" class="MessageBody"> 
-      <p>
+    <td id="bodyCell" class="MessageBody" style="padding-bottom: 50px !important;"> 
+      <p style="margin: 0;padding: 10;font-family: &quot;Source Sans Pro&quot;, &quot;Arial&quot;, sans-serif;font-size: 20px;text-align: left;">
         <% @resource.mail_form_attributes.each do |attribute, value|
   next if value.blank? %>
           <% if (@resource.class.human_attribute_name(attribute) == 'Message') %>
@@ -148,18 +152,22 @@
           <% end %>
         <% end %>
       </p>
-      <hr/>
-      <p>
-        <b>Reply to finalize the transaction!</b>
-      </p>
+    </br>
+    </br>
+    <hr>
+    <p style="margin: 0;padding: 10;font-family: &quot;Source Sans Pro&quot;, &quot;Arial&quot;, sans-serif;font-size: 15px;text-align: left;">Reply back to continue the conversation and finalize your transaction!</p>
     </td> 
   </tr>
-  <tr class="footer">
+  <tr class="footer" style="background-color: #ff3f3d;font-family: &quot;Inconsolata&quot;, &quot;Courier New&quot;, sans-serif;font-size: 15px;color: #ffffff;text-align: center;">
     <td id="bodyCell">
-      <p class="footer"><strong>&#169; 2014. A thing by Team-ISH</strong>
+      <p class="footer" style="margin: 0;padding: 10;font-family: &quot;Inconsolata&quot;, &quot;Courier New&quot;, sans-serif;font-size: 15px;text-align: center;background-color: #ff3f3d;color: #ffffff;"><strong>&#169; 2014. A thing by Team-ISH</strong>
       </p> 
     </td>
   </tr>
+</table>
+</center>
+</tr>
+</td>
 </table>
 </body>
 </html>
