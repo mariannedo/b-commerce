@@ -194,9 +194,16 @@ $(function(){
       }
       if($('p.notice').length || $('p.alert').length) { 
         $('p.notice, p.alert').animate({ opacity: 1 }, 3000, function() { 
-          $(this).fadeOut('fast'); 
+          $(this).slideUp('fast'); 
         }); 
       }
+
+      // window height
+      $('.contentwrapper').css('min-height', $(window).height() - 50 - $('#Footer').outerHeight()); 
+
+      $(window).on('resize', function() { 
+        $('.contentwrapper').css('min-height', $(window).height() - 50 - $('#Footer').outerHeight()); 
+      }); 
 
     });
 

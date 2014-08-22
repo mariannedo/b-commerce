@@ -824,8 +824,9 @@ p.notice,
 p.alert { 
   background: #ff3f3d;
   color: #fff; 
-  padding: 10px 60px; 
+  padding: 14px 60px; 
   width: 100%; 
+  text-align: center;
 }
 .sign-in input[type="text"], 
 .sign-in input[type="email"], 
