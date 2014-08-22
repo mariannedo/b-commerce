@@ -1,24 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
   <title>THRIFT</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <header>
-    <h1><%= link_to('THRIFT', root_path) %></h1>
-  </header>
+  <div id="Wrapper">
+    <nav id="MainNav">
+      <a href="<%= root_path %>"><span class="logo"></span></a>
+      <ul id="Nav">
+        <li class="h3"><a href="">Buy</a></li>
+        <li class="h3"><a href="">Sell</a></li>
+        <li class="h3"><a href="">Request</a></li>
+        <li class="h3"><%= link_to('Lend', requests_path) %></li>
+        <li class="h3 login"><a href="#">Login</a></li>
+      </ul>
+    </nav>
 
-  <% if notice %>
-    <p class="notice"><%= notice %></p>
-  <% end %>
-  <% if alert %>
-    <p class="alert"><%= alert %></p>
-  <% end %>
+    <% if notice %>
+      <p class="notice"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert"><%= alert %></p>
+    <% end %>
 
-  <%= yield %>
+    <%= yield %>
 
+  </div>
 </body>
 </html>

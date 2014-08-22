@@ -1,21 +1,62 @@
-<h1>Listing</h1>
-<p><%= @listing.user.first_name %> posted:</p>
+<section id="ProductListing">
+  <div id="Slideshow">
+    <ul class="simpleSlider">
+      <li>
+        <%= image_tag @listing.image_url.to_s %>
+      </li>
+    </ul>
 
-<b>Title</b>
-<p><%= @listing.title %></p>
+    <ul class="thumbs">
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
 
-<b>Story</b>
-<p><%= @listing.story %></p>
+    <div id="ProductInfo">
+      <div class="title">
+        <h1><%= @listing.title %></h1>
+      </div>
+      <div class="subinfo">
+        <h1 class="h3">by <%= @listing.user.first_name %> <%= @listing.user.last_name %></h1>
+        <h2 class="h2">$<%= number_with_precision(@listing.price, :precision => 2) %></h2>
+      </div>
 
-<b>Image</b>
-<%= image_tag @listing.image_url.to_s %>
+      <% unless(current_user == @listing.user) %>
+        <%= link_to(raw('<span class="btn h4">I want this</span>'), listing_send_buy_msg_path(@listing), class: 'buy') %>
+        <%= link_to(raw("<span class='btn h4'>Haggle #{@listing.user.first_name}</span>"), listing_haggle_path(@listing), class: 'haggle') %>
+      <% end %>
 
-<% if(current_user == @listing.user) %>
-  <%= link_to('Edit this listing', edit_listing_path) %>
-<% else %>
-  <%# Contact the person %>
+      <div class="story">
+        <p><%= @listing.story %></p>
+      </div>
 
-  <%= link_to('Buy this thing', listing_send_buy_msg_path(@listing)) %>
-  <%= link_to("Haggle #{@listing.user.first_name}", listing_haggle_path(@listing)) %>
-  <%= link_to("Ask #{@listing.user.first_name} a question", listing_contact_path(@listing)) %>
-<% end %>
+      <% if(current_user == @listing.user) %>
+        <%= link_to('Edit this listing ››', edit_listing_path) %>
+      <% else %>
+        <%= link_to("Hit up the seller ››", listing_contact_path(@listing), class: 'h3') %>
+      <% end %>
+    </div>
+  </section>
+
+  <section id="MoreProducts">
+    <h1 class="h2">More Things</h1>
+    <ul class="three">
+      <% @more.each do |l| %>
+        <a href="<%= listing_path(l) %>">
+          <li class="product">
+            <div class="imgouter" style="background-image: url(<%= l.image_url %>);">
+              <span class="spacer"></span>
+            </div>
+            <div class="listinginfo">
+              <h1 class="h3"><%= l.title %></h1>
+              <h2 class="h4">$<%= number_with_precision(l.price, :precision => 2) %></h2>
+            </div>
+          </li>
+        </a>
+      <% end %>
+      <li class="gap product"></li>
+      <li class="gap product"></li>
+    </ul>
+  </section>
+</section>

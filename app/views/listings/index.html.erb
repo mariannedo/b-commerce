@@ -39,7 +39,7 @@
     <% @listings.each do |l| %>
       <li>
         <h4><%= link_to(l.title, listing_path(l)) %></h4>
-        <p>$<%= l.price %></p>
+        <p>$<%= number_with_precision(l.price, :precision => 2) %></p>
         <%= image_tag l.image_url.to_s %>
         <%= link_to('View Listing', listing_path(l)) %>
       </li>

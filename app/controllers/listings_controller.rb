@@ -38,6 +38,7 @@ class ListingsController < ApplicationController
   end
 
   def show
+    @more = Listing.where.not(id: @listing.id).order('RANDOM()').limit(4)
   end
 
   def destroy

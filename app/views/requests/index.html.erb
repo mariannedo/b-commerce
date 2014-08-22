@@ -1,13 +1,25 @@
 <% if (@requests.size > 0) %>
-  <ul>
-    <% @requests.each do |r| %>
-      <li>
-        <%= r.item %>
-        <b>The Story</b>
-        <%= r.description %>
-
-        <%= link_to("I have this!", request_contact_path(r)) %>
-      </li>
-    <% end %>
-  </ul>
+  <div id="BorrowList">
+    <h1 class="big">Things People Need</h1>
+    <div id="Listing">
+      <dl class="accordion">
+        <% @requests.each do |r| %>
+          <dt>
+            <a href="">
+            <span class="info">
+            <h1 class="h2"><%= r.user.first_name %> <%= r.user.last_name %></h1>
+            <h2 class="h1">Can I borrow <%= r.item %>?</h2>
+            <h3>▿</h3>
+            </span>
+            </a>
+          </dt>
+          <dd>
+            <h1 class="h3">The Story</h1>
+            <p><%= r.description %></p>
+            <a href=""><span class="btn2 h4">I can lend this</span></a>
+          </dd>
+        <% end %>
+      </dl>
+    </div>
+  </div>
 <% end %>
