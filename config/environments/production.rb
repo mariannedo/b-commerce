@@ -83,4 +83,14 @@ Rails.application.configure do
 
 
   config.action_mailer.perform_deliveries = true
+
+  config.action_mailer.delivery_method = :sendmail
+  config.action_mailer.smtp_settings = {
+    address:              'smtp.gmail.com',
+    port:                 587,
+    domain:               'barrelny.com',
+    user_name:            'mariannepdo@gmail.com',
+    password:             ENV['admin_pw'],
+    authentication:       'plain',
+    enable_starttls_auto: true  }
 end
