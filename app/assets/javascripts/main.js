@@ -193,8 +193,8 @@ $(function(){
         $('.simpleSlider').simpleSlider();
       }
       if($('p.notice').length || $('p.alert').length) { 
-        $('p.notice, p.alert').animate({ opacity: 1 }, 3000, function() { 
-          $(this).slideUp('fast'); 
+        $('p.notice, p.alert').animate({ opacity: 1 }, 2000, function() { 
+          $(this).slideUp('slow'); 
         }); 
       }
 
