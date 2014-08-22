@@ -116,7 +116,7 @@
   </tr>
   <tr>
     <td id="bodyCell" class="MessageTitle" style="padding: 20px;border-top: 0;padding-top: 30px !important;"> 
-      <h1 style="margin: 0;padding: 0;color: #ff3f3d;font-family: &quot;Inconsolata&quot;, &quot;Courier New&quot;, sans-serif;font-size: 30px;text-align: left;">
+      <h1 style="margin: 0;padding: 0;color: #ff3f3d;font-family: &quot;Inconsolata&quot;, &quot;Courier New&quot;, sans-serif;font-size: 20px;text-align: left;">
         <% @resource.mail_form_attributes.each do |attribute, value|
         next if value.blank? %>
           <% if (@resource.class.human_attribute_name(attribute) == 'Subject') %>
@@ -135,8 +135,8 @@
     </td>
   </tr>
   <tr>
-    <td id="bodyCell" class="MessageBody" style="padding-bottom: 50px !important;"> 
-      <p style="margin: 0;padding: 10;font-family: &quot;Source Sans Pro&quot;, &quot;Arial&quot;, sans-serif;font-size: 20px;text-align: left;">
+    <td id="bodyCell" class="MessageBody" style="padding: 20px; padding-bottom: 50px !important;"> 
+      <p style="margin: 0;padding-bottom: 30px;font-family: &quot;Source Sans Pro&quot;, &quot;Arial&quot;, sans-serif;font-size: 20px;text-align: left;">
         <% @resource.mail_form_attributes.each do |attribute, value|
   next if value.blank? %>
           <% if (@resource.class.human_attribute_name(attribute) == 'Message') %>
