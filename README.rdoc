@@ -1,28 +1,9 @@
-== README
+## Thrift 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#### An internal Craigslist tool! 
 
-Things you may want to cover:
+Designed by Crystal Ellis and Lucas Ballasy
 
-* Ruby version
+Front-End Development by [Lucas Ballasy](https://github.com/LucasJBallasy/teamish)
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Back-End Development by Marianne Do
