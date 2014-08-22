@@ -1,40 +1,165 @@
-<% @resource.mail_form_attributes.each do |attribute, value|
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>SUBJECT!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<style type="text/css">
+  body, #bodyTitle, #bodyMessage, #bodyFooter, {
+    height:100%;
+    margin:0;
+    padding:0;
+    border:0;
+    width:100%;
+    max-width:600px;
+    
+  }
+  body {
+    background-color:#f7f7f7;
+  }
+  table {
+    border-collapse:collapse;
+    border:0;
+    padding:0;
+    background-color:#ffffff;
+  }
+  h1 {
+    margin:0;
+    padding:0;
+    color:#ff3f3d;
+    font-family:"Inconsolata", "Courier New", sans-serif;
+    font-size:30px;
+    text-align:left;
+  }
+  p {
+    margin:0;
+    padding:10;
+    font-family:"Source Sans Pro", "Arial", sans-serif;
+    font-size:20px;
+    text-align:left;
+  }
+  table.center {
+    margin-left:auto;
+    margin-right:auto;
+  } 
+  .footer {
+    background-color:#ff3f3d;
+    font-family:"Inconsolata", "Courier New", sans-serif;
+    font-size:15px;
+    color:#ffffff;
+    text-align:center;
+  }
+  .headerImage {
+    background-color:#ff3f3d;
+    padding:10px;
+  }
+  .MessageTitle {
+    padding-top:30px !important;
+  }
+  .MessageBody {
+    padding-bottom:50px !important;
+  }
+  #bodyCell {
+    padding:20px;
+    border-top:0;
+  }
+  @media only screen and (max-width: 600px){
+    body, table, td{
+      width:100% !important;
+      min-width:100% !important;
+    }
+    
+  @media only screen and (max-width: 600px){
+    td[id=bodyCell]{
+      padding:10px !important;
+    }
+  @media only screen and (max-width: 600px){
+    img{
+      width:100% !important;
+      min-width:100% !important;
+    }
+  @media only screen and (max-width: 600px){
+    td[class="MessageTitle"]{
+      padding-top:20px !important;
+    }
+  @media only screen and (max-width: 600px){
+    td[class="MessageBody"]{
+      padding-bottom:30px !important;
+    }
+  @media only screen and (max-width: 600px){
+    h1{
+      font-size:20px !important;
+    }
+  @media only screen and (max-width: 600px){
+    p{
+      font-size:15px !important;
+    } 
+  @media only screen and (max-width: 600px){
+    p[class="footer"]{
+      font-size:12px !important;
+    } 
+</style>
+
+
+</head>
+
+<body>
+<table class="center">
+  <tr>
+    <td class="headerImage">
+      <img src="http://nameless-garden-4346.herokuapp.com/images/email-header.jpg">
+    </td>
+  </tr>
+  <tr>
+    <td id="bodyCell" class="MessageTitle"> 
+      <h1>
+        <% @resource.mail_form_attributes.each do |attribute, value|
+        next if value.blank? %>
+          <% if (@resource.class.human_attribute_name(attribute) == 'Subject') %>
+            <%= case value
+            when /\n/
+              raw(simple_format(h(value)))
+            when Time, DateTime, Date
+              I18n.l(value)
+            else
+              value
+            end
+            %>
+          <% end %>
+        <% end %>
+      </h1>  
+    </td>
+  </tr>
+  <tr>
+    <td id="bodyCell" class="MessageBody"> 
+      <p>
+        <% @resource.mail_form_attributes.each do |attribute, value|
   next if value.blank? %>
-  <% if (@resource.class.human_attribute_name(attribute) == 'Message') %>
-    <p><b style="color: #ff3f3d"><%= @resource.class.human_attribute_name(attribute) %>:</b>
-    <%= case value
-      when /\n/
-        raw(simple_format(h(value)))
-      when Time, DateTime, Date
-        I18n.l(value)
-      else
-        value
-      end
-    %></p>
-  <% end %>
-<% end %>
-
-<p style="color: #ff3f3d">Sent from THRIFT</p>
-
-<% unless @resource.class.mail_appendable.blank? %>
-  <br />
-    <h4><%= I18n.t :title, :scope => [ :mail_form, :request ], :default => 'Request information' %></h4>
-
-    <% @resource.class.mail_appendable.each do |attribute|
-      value = @resource.request.send(attribute)
-
-      value = if value.is_a?(Hash) && !value.empty?
-        list = value.to_a.map{ |k,v| content_tag(:li, h("#{k}: #{v.inspect}")) }.join("\n")
-        content_tag(:ul, raw(list), :style => "list-style:none;")
-      elsif value.is_a?(String)
-        value
-      else
-        value.inspect
-      end
-    %>
-
-    <p><b><%= I18n.t attribute, :scope => [ :mail_form, :request ], :default => attribute.to_s.humanize %>:</b>
-    <%= value.include?("\n") ? simple_format(value) : value %></p>
-  <% end %>
-  <br />
-<% end %>
+          <% if (@resource.class.human_attribute_name(attribute) == 'Message') %>
+            <%= case value
+              when /\n/
+                raw(simple_format(h(value)))
+              when Time, DateTime, Date
+                I18n.l(value)
+              else
+                value
+              end
+            %>
+          <% end %>
+        <% end %>
+      </p>
+      <hr/>
+      <p>
+        <b>Reply to finalize the transaction!</b>
+      </p>
+    </td> 
+  </tr>
+  <tr class="footer">
+    <td id="bodyCell">
+      <p class="footer"><strong>&#169; 2014. A thing by Team-ISH</strong>
+      </p> 
+    </td>
+  </tr>
+</table>
+</body>
+</html>
