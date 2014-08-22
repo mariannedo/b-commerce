@@ -1,15 +1,23 @@
 <section id="ProductListing">
   <div id="Slideshow">
     <ul class="simpleSlider">
+      <% if @listing.image_url.to_s != '' %>
       <li>
         <%= image_tag @listing.image_url.to_s %>
       </li>
+      <% end %>
+
+      <% if @listing.image2_url.to_s != '' %>
       <li>
         <%= image_tag @listing.image2_url.to_s %>
       </li>
+      <% end %>
+
+      <% if @listing.image3_url.to_s != '' %>
       <li>
         <%= image_tag @listing.image3_url.to_s %>
       </li>
+      <% end %>
     </ul>
 
     <ul class="thumbs">
