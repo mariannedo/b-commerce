@@ -11,8 +11,9 @@
 
   <div>
     <label>Desired Price</label>
-    <nobr>
-      $<%= f.text_field :price, placeholder: '1,000,000', class: 'short' %>
+    <nobr class="pos-rel">
+      <span class="dollar-sign">$</span>
+      <%= f.text_field :price, placeholder: '1,000,000', class: 'short' %>
     </nobr>
   </div>
 

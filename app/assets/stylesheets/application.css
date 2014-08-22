@@ -949,9 +949,6 @@ form .request input {
   border-right: 0; 
   margin-left: 10px; 
 }
-form input.short { 
-  width: 99%;
-}
 .field_with_errors { 
   display: inline-block; 
   width: 100%; 
@@ -973,4 +970,18 @@ form input.short {
   form { 
     max-width: 100%; 
   }
+}
+
+.dollar-sign { 
+  position: absolute; 
+  top: 2px;
+  left: 10px;  
+  font-weight: 700;
+  -webkit-font-smoothing: antialiased;
+}
+.pos-rel { 
+  position: relative; 
+}
+form input.short { 
+  width: 100%;
 }
