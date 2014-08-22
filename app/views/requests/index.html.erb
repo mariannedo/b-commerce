@@ -1,6 +1,6 @@
 <% if (@requests.size > 0) %>
   <div id="BorrowList">
-    <h1 class="big">things people need:</h1>
+    <h1 class="big">Things people need.</h1>
     <div id="Listing">
       <dl class="accordion">
         <% @requests.each do |r| %>
@@ -14,7 +14,7 @@
             </a>
           </dt>
           <dd>
-            <h1 class="h3">The Story</h1>
+            <h1 class="h3">The story</h1>
             <p><%= r.description %></p>
 
             <%= link_to(raw("<span class='btn2 h4'>I can lend this</span>"), request_contact_path(r)) %>
