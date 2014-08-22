@@ -297,7 +297,7 @@ p, .p {
     margin: 30px 0; }
 
 #MoreProducts {
-  padding: 50px 0 0 210px;
+  padding: 50px 0 0 0;
   max-width: 1300px; }
   #MoreProducts .h2 {
     border-top: 2px #ff3f3d solid;
