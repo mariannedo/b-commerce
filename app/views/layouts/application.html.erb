@@ -40,10 +40,10 @@
       </a>
       <ul id="Nav2">
         <li class="h1"><%= link_to('Home', root_path) %></li>
-        <li class="h3"><%= link_to('Buy', listings_path) %></li>
-        <li class="h3"><%= link_to('Sell', new_listing_path) %></li>
-        <li class="h3"><%= link_to('Borrow', new_request_path) %></li>
-        <li class="h3"><%= link_to('Lend', requests_path) %></li>
+        <li class="h1"><%= link_to('Buy', listings_path) %></li>
+        <li class="h1"><%= link_to('Sell', new_listing_path) %></li>
+        <li class="h1"><%= link_to('Borrow', new_request_path) %></li>
+        <li class="h1"><%= link_to('Lend', requests_path) %></li>
         <% unless user_signed_in? %>
           <li class="h1 login"><%= link_to 'Login', new_user_session_path %></li>
         <% else %>
