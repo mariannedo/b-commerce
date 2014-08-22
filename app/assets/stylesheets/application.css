@@ -174,7 +174,7 @@ p, .p {
         border-bottom: 2px #ff3f3d solid; }
 
 #HomeContainer {
-  margin: 50px 0 0 230px;
+  margin: 50px 0 0 0;
   max-width: 1300px;
   -moz-box-sizing: border-box;
        box-sizing: border-box; }
@@ -225,7 +225,7 @@ p, .p {
 
 #ProductListing {
   display: inline-block;
-  margin: 50px 0 0 230px;
+  margin: 50px 0 0 0;
   width: 100%;
   max-width: 1300px; }
 
@@ -361,7 +361,7 @@ p, .p {
 #BuyList {
   width: 100%;
   display: inline-block;
-  margin: 50px 0 0 230px;
+  margin: 50px 0 0 0;
   max-width: 1300px; }
 
 .saleproduct {
@@ -411,7 +411,7 @@ p, .p {
 #BorrowList {
   width: 100%;
   display: inline-block;
-  margin: 50px 0 0 230px;
+  margin: 50px 0 0 0;
   max-width: 1300px; }
 
 .accordion {
@@ -761,4 +761,7 @@ p.alert {
 .sign-in input[type="email"], 
 .sign-in input[type="password"] { 
   padding: 5px; 
+}
+.main-container { 
+  margin-left: 230px;
 }
