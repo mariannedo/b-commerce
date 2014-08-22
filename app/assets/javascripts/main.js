@@ -1,6 +1,5 @@
 var appReady = function() { 
 
-    
   var $allPanels = $('.accordion > dd').hide();
     
   $('.accordion > dt > a').click(function(e) {
