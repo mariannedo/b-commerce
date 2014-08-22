@@ -5,4 +5,6 @@ class Listing < ActiveRecord::Base
   mount_uploader :image3, ImageUploader
 
   validates :user, :presence => true
+  validates :title, :presence => true
+  validates :price, :presence => true
 end

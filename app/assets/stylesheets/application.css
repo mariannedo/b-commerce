@@ -899,7 +899,6 @@ form textarea {
 }
 form > div { 
   padding: 20px 0 10px;
-  overflow: hidden;
 }
 form input[type="text"], 
 form input[type="email"], 
@@ -938,10 +937,26 @@ form .request input {
   border-top: 0; 
   border-left: 0; 
   border-right: 0; 
-  margin-left: -10px; 
+  margin-left: 10px; 
 }
 form input.short { 
-  width: 98%;
+  width: 99%;
+}
+.field_with_errors { 
+  display: inline-block; 
+  width: 100%; 
+  position: relative; 
+}
+.field_with_errors input { 
+  background: #FEEBEB;
+}
+.field_with_errors:after { 
+  content: '\2190'; 
+  position: absolute; 
+  right: -20px; 
+  top: 14px;
+  color: #ff3f3d;
+  font-size: 20px; 
 }
 
 @media screen and (max-width: 1024px) { 

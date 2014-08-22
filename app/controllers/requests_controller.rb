@@ -1,6 +1,6 @@
 class RequestsController < ApplicationController
   before_action :find_request, only: [:show, :edit, :update, :destroy, :contact, :send_contact_msg]
-  before_action :authenticate_user!, except: [:index]
+  before_action :authenticate_user!, except: [:index, :new]
   before_action :set_user
 
   def index
