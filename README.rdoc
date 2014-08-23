@@ -1,9 +1,0 @@
-## Thrift 
-
-#### An internal Craigslist tool! 
-
-Designed by Crystal Ellis and Lucas Ballasy
-
-Front-End Development by [Lucas Ballasy](https://github.com/LucasJBallasy/teamish)
-
-Back-End Development by Marianne Do
